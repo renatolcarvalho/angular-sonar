@@ -22,7 +22,8 @@ module.exports = function (config) {
     },
     coverageReporter: {
       type: 'lcov',
-      dir: 'coverage/'
+      dir: 'coverage',
+      subdir: 'sonar'
     },
     reporters: ['progress', 'kjhtml', 'coverage'],
     port: 9876,
