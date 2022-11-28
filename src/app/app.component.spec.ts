@@ -28,4 +28,10 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('sonarProjectTest app is running!');
   });
+
+  it ('shoud return 0', () =>{
+    const fixture = TestBed.createComponent(AppComponent);
+    expect(fixture.componentInstance.returnZero()).toBe(0);
+  });
+
 });
