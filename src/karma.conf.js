@@ -7,31 +7,24 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
       require('karma-sonarqube-reporter'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
     ],
-    client:{
+    client: {
       clearContext: false
-    },
-    coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
-      fixWebpackSourcePaths: true
-    },
-    sonarqubeReporter: {
-      basePath: 'src/app',
-      outputFolder: 'reports',
-      filePattern: '**/*spec.ts',
-      encoding: 'utf-8',
-      legacyMode: false,
-      reportName: (metadata) => {
-        return metadata.concat('xml').join('.');
-      }
     },
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'kjhtml', 'sonarqube'],
+    preprocessors: {
+      'app/**/*.ts': 'coverage'
+    },
+    coverageReporter: {
+      type: 'lcov',
+      dir: 'coverage/'
+    },
+    reporters: ['progress', 'kjhtml', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
