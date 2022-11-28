@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<testExecutions version='1'>
+    <file path='src/app/app.component.spec.ts'>
+        <testCase name='AppComponent shoud return 0' duration='94'/>
+        <testCase name='AppComponent should create the app' duration='12'/>
+        <testCase name='AppComponent should have as title &apos;sonarProjectTest&apos;' duration='9'/>
+        <testCase name='AppComponent should render title' duration='11'/>
+    </file>
+</testExecutions>
